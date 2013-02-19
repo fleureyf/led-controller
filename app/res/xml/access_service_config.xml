@@ -3,6 +3,6 @@
 <accessibility-service
     xmlns:android="http://schemas.android.com/apk/res/android" 
     android:description="@string/accessibility_desc"
-    android:accessibilityEventTypes="typeNotificationStateChanged"
+    android:accessibilityEventTypes="typeNotificationStateChanged|typeViewTextChanged|typeViewClicked"
     android:accessibilityFeedbackType="feedbackVisual"
     android:notificationTimeout="100"/>

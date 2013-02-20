@@ -18,9 +18,9 @@ public class CheckIsFullService extends Service {
 		int status = battery.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
 		if (status == BatteryManager.BATTERY_STATUS_FULL) {
-			preferences.edit().putBoolean(PreferenceKeys.PREF_IS_FULL, true);
+			preferences.edit().putBoolean(PreferenceKeys.PREF_IS_FULL, true).commit();
 		} else {
-			preferences.edit().putBoolean(PreferenceKeys.PREF_IS_FULL, false);
+			preferences.edit().putBoolean(PreferenceKeys.PREF_IS_FULL, false).commit();
 		}
 		stopSelf();
 		return START_NOT_STICKY;

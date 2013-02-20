@@ -28,6 +28,9 @@ public class ScreenStateReceiver extends BroadcastReceiver {
     			Log.w(TAG, "Notify: MISSED_CALL");
     			manager.cancelAll();
     			manager.notify(1000, NotificationBuilder.missedCall(context));
+    		} else if (preferences.getBoolean(PreferenceKeys.PREF_IS_FULL, false)) {
+    			Log.w(TAG, "Notify: IS_FULL");
+    			manager.notify(1000, NotificationBuilder.isFull(context));
     		} else if (preferences.getBoolean(PreferenceKeys.PREF_ON_CHARGE, false)) {
     			Log.w(TAG, "Notify: ON_CHARGE");
     			manager.notify(1000, NotificationBuilder.onCharge(context));

@@ -20,9 +20,11 @@ public class PowerConnectionReceiver extends BroadcastReceiver {
     	if (Intent.ACTION_POWER_CONNECTED.equals(intent.getAction())) {
     		Toast.makeText(context, "Connected", Toast.LENGTH_LONG).show();
     		preferences.edit().putBoolean(PreferenceKeys.PREF_ON_CHARGE, true).commit();
+    		AlarmHelper.setCheckIsFullAlarm(context);
     	} else if (Intent.ACTION_POWER_DISCONNECTED.equals(intent.getAction())) {
     		Toast.makeText(context, "Disconnected", Toast.LENGTH_LONG).show();
     		preferences.edit().putBoolean(PreferenceKeys.PREF_ON_CHARGE, false).commit();
+    		AlarmHelper.cancelCheckIsFullAlarm(context);
     	}
     }
 }

@@ -14,6 +14,14 @@ public class NotificationBuilder {
 		return not;
 	}
 	
+	public static Notification isFull(Context context) {
+		Notification.Builder builder = new Notification.Builder(context);
+		builder.setLights(Color.GREEN, 1, 0);
+		Notification not = builder.build();
+		not.flags |= Notification.FLAG_SHOW_LIGHTS;
+		return not;
+	}
+	
 	public static Notification missedCall(Context context) {
 		Notification.Builder builder = new Notification.Builder(context);
 		builder.setLights(Color.MAGENTA, 1000, 500);

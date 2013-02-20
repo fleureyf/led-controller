@@ -14,6 +14,7 @@ public class PreferencesChangeReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		Log.d(TAG, "__ON_RECEIVED__");
+		NotificationHelper.cancellAll(context);
 		NotificationHelper.notify(context, NotificationType.IS_FULL);
 	}
 

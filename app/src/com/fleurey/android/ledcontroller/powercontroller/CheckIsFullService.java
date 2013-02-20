@@ -22,10 +22,9 @@ public class CheckIsFullService extends Service {
 		Intent battery = registerReceiver(null, new IntentFilter(Intent.ACTION_BATTERY_CHANGED));
 		int status = battery.getIntExtra(BatteryManager.EXTRA_STATUS, -1);
 		SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-		Log.d(TAG, ACTION_IS_FULL);
-		sendBroadcast(new Intent(ACTION_IS_FULL));
 		if (status == BatteryManager.BATTERY_STATUS_FULL) {
 			Log.d(TAG, "Check battery: full");
+			sendBroadcast(new Intent(ACTION_IS_FULL));
 			preferences.edit().putBoolean(PreferenceKeys.PREF_IS_FULL, true).commit();
 		} else {
 			Log.d(TAG, "Check battery: NOT full");

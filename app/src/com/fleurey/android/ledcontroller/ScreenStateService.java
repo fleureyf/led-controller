@@ -10,6 +10,8 @@ import android.util.Log;
 
 public class ScreenStateService extends Service {
 
+	public final static String ACTION_STARTED = ScreenStateService.class.getName() + ".ACTION_STARTED"; 
+	
 	private final static String TAG = ScreenStateService.class.getSimpleName();
 	
 	private ScreenStateReceiver receiver = new ScreenStateReceiver();
@@ -17,6 +19,7 @@ public class ScreenStateService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG, "__ON_START__");
+		registerReceiver(receiver, new IntentFilter(ACTION_STARTED));
 		registerReceiver(receiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 		return START_STICKY;
 	}
@@ -25,6 +28,7 @@ public class ScreenStateService extends Service {
 	public void onDestroy() {
 		Log.d(TAG, "__ON_DESTROY__");
 		super.onDestroy();
+		unregisterReceiver(receiver);
 	}
 	
 	@Override

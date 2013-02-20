@@ -22,10 +22,12 @@ public class ScreenStateReceiver extends BroadcastReceiver {
     	manager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
     	if (Intent.ACTION_SCREEN_OFF.equals(intent.getAction())) {
     		Log.d(TAG, "SCREEN_OFF__");
-    		if (preferences.getBoolean(AccessibilityService.PREF_MISSED_CALL, false)) {
+    		if (preferences.getBoolean(PreferenceKeys.PREF_MISSED_CALL, false)) {
+    			Log.w(TAG, "Notify: MISSED_CALL");
     			manager.cancelAll();
     			manager.notify(1000, NotificationBuilder.missedCall(context));
     		} else if (preferences.getBoolean(PowerConnectionReceiver.PREF_ON_CHARGE, false)) {
+    			Log.w(TAG, "Notify: ON_CHARGE");
     			manager.notify(1000, NotificationBuilder.onCharge(context));
     		}
     	} 

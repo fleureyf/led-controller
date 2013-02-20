@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 		Log.d("DEBUG", "__ON_CREATE__");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		startService(new Intent(getApplicationContext(), ScreenStateService.class));
+//		startService(new Intent(getApplicationContext(), ScreenStateService.class));
 //		Notification notification = testNotification();
 //		NotificationManager manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 //		notification.flags |= Notification.FLAG_SHOW_LIGHTS;

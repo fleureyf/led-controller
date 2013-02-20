@@ -1,8 +1,5 @@
 package com.fleurey.android.ledcontroller.notificationcontroller;
 
-import com.fleurey.android.ledcontroller.powercontroller.PowerConnectionReceiver;
-import com.fleurey.android.ledcontroller.preferencescontroller.PreferenceKeys;
-
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -10,6 +7,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+
+import com.fleurey.android.ledcontroller.preferencescontroller.PreferenceKeys;
 
 public class ScreenStateReceiver extends BroadcastReceiver {
 	
@@ -29,7 +28,7 @@ public class ScreenStateReceiver extends BroadcastReceiver {
     			Log.w(TAG, "Notify: MISSED_CALL");
     			manager.cancelAll();
     			manager.notify(1000, NotificationBuilder.missedCall(context));
-    		} else if (preferences.getBoolean(PowerConnectionReceiver.PREF_ON_CHARGE, false)) {
+    		} else if (preferences.getBoolean(PreferenceKeys.PREF_ON_CHARGE, false)) {
     			Log.w(TAG, "Notify: ON_CHARGE");
     			manager.notify(1000, NotificationBuilder.onCharge(context));
     		}

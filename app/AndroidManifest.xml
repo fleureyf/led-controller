@@ -24,6 +24,9 @@
         <service 
             android:name=".ScreenStateService">
         </service>
+         <service 
+            android:name=".powercontroller.CheckIsFullService">
+        </service>
         <service 
             android:name=".AccessibilityService"
             android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
@@ -34,6 +37,13 @@
                 android:name="android.accessibilityservice"
                 android:resource="@xml/access_service_config"/>
         </service>
+        <receiver
+            android:name=".notificationcontroller.PreferencesChangeReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.fleurey.android.ledcontroller.powercontroller.CheckIsFullService.ACTION_IS_FULL" />
+            </intent-filter>
+        </receiver>
         <receiver android:name=".powercontroller.PowerConnectionReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />

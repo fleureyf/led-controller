@@ -7,7 +7,7 @@ import android.content.Intent;
 
 public final class AlarmHelper {
 
-	public static final int REFRESH_RATE = 30000; // Time in milliseconds
+	public static final int REFRESH_RATE = 60000; // Time in milliseconds
 	
 	private AlarmHelper() {}
 	

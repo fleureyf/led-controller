@@ -1,5 +1,7 @@
 package com.fleurey.android.ledcontroller;
 
+import com.fleurey.android.ledcontroller.notificationcontroller.ScreenStateReceiver;
+
 import android.app.Service;
 import android.content.Intent;
 import android.content.IntentFilter;

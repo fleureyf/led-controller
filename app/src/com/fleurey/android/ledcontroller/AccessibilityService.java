@@ -1,5 +1,8 @@
 package com.fleurey.android.ledcontroller;
 
+import com.fleurey.android.ledcontroller.preferencescontroller.CheckToDismiss;
+import com.fleurey.android.ledcontroller.preferencescontroller.CheckToSet;
+
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;

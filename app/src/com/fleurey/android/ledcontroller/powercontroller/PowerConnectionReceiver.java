@@ -1,4 +1,4 @@
-package com.fleurey.android.ledcontroller;
+package com.fleurey.android.ledcontroller.powercontroller;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

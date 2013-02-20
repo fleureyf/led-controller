@@ -1,4 +1,7 @@
-package com.fleurey.android.ledcontroller;
+package com.fleurey.android.ledcontroller.notificationcontroller;
+
+import com.fleurey.android.ledcontroller.powercontroller.PowerConnectionReceiver;
+import com.fleurey.android.ledcontroller.preferencescontroller.PreferenceKeys;
 
 import android.app.NotificationManager;
 import android.content.BroadcastReceiver;

@@ -1,4 +1,4 @@
-package com.fleurey.android.ledcontroller;
+package com.fleurey.android.ledcontroller.notificationcontroller;
 
 import android.app.Notification;
 import android.content.Context;

@@ -1,4 +1,6 @@
-package com.fleurey.android.ledcontroller;
+package com.fleurey.android.ledcontroller.preferencescontroller;
+
+import com.fleurey.android.ledcontroller.powercontroller.PowerConnectionReceiver;
 
 public class PreferenceKeys {
 

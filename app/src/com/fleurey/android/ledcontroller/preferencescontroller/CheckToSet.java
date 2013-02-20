@@ -1,4 +1,5 @@
-package com.fleurey.android.ledcontroller;
+package com.fleurey.android.ledcontroller.preferencescontroller;
+
 
 import android.content.SharedPreferences;
 import android.util.Log;

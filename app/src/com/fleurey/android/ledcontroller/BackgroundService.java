@@ -1,6 +1,6 @@
 package com.fleurey.android.ledcontroller;
 
-import com.fleurey.android.ledcontroller.notificationcontroller.ScreenStateReceiver;
+import com.fleurey.android.ledcontroller.notificationcontroller.UpdateNotificationReceiver;
 
 import android.app.Service;
 import android.content.Intent;
@@ -8,13 +8,13 @@ import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
-public class ScreenStateService extends Service {
+public class BackgroundService extends Service {
 
-	public final static String ACTION_STARTED = ScreenStateService.class.getName() + ".ACTION_STARTED"; 
+	public final static String ACTION_STARTED = BackgroundService.class.getName() + ".ACTION_STARTED"; 
 	
-	private final static String TAG = ScreenStateService.class.getSimpleName();
+	private final static String TAG = BackgroundService.class.getSimpleName();
 	
-	private ScreenStateReceiver receiver = new ScreenStateReceiver();
+	private UpdateNotificationReceiver receiver = new UpdateNotificationReceiver();
 	
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {

@@ -15,7 +15,7 @@ public class MainActivity extends Activity {
 		Log.d(TAG, "__ON_CREATE__");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		startService(new Intent(getApplicationContext(), ScreenStateService.class));
+		startService(new Intent(getApplicationContext(), BackgroundService.class));
 	}
 
 	@Override

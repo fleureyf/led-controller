@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <service 
-            android:name=".ScreenStateService">
+            android:name=".BackgroundService">
         </service>
          <service 
             android:name=".powercontroller.CheckIsFullService">
@@ -38,14 +38,17 @@
                 android:resource="@xml/access_service_config"/>
         </service>
         <receiver
-            android:name=".notificationcontroller.PreferencesChangeReceiver"
+            android:name=".notificationcontroller.UpdateNotificationReceiver"
             android:exported="false" >
             <intent-filter>
                 <action android:name="com.fleurey.android.ledcontroller.powercontroller.CheckIsFullService.ACTION_IS_FULL" />
             </intent-filter>
         </receiver>
-        <receiver android:name=".powercontroller.PowerConnectionReceiver" >
+        <receiver 
+            android:name=".powercontroller.PowerConnectionReceiver" 
+            android:exported="false" >
             <intent-filter>
+                <action android:name="com.fleurey.android.ledcontroller.BackgroundService.ACTION_STARTED" />
                 <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>

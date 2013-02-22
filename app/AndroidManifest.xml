@@ -41,6 +41,7 @@
             android:name=".notificationcontroller.UpdateNotificationReceiver"
             android:exported="false" >
             <intent-filter>
+                <action android:name="com.fleurey.android.ledcontroller.notificationcontroller.UpdateNotificationReceiver.ACTION_ASK_FOR_UPDATE" />
                 <action android:name="com.fleurey.android.ledcontroller.powercontroller.CheckIsFullService.ACTION_IS_FULL" />
             </intent-filter>
         </receiver>

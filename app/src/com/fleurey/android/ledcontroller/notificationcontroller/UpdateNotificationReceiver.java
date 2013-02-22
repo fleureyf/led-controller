@@ -7,12 +7,13 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
-import com.fleurey.android.ledcontroller.BackgroundService;
 import com.fleurey.android.ledcontroller.notificationcontroller.NotificationHelper.NotificationType;
 import com.fleurey.android.ledcontroller.powercontroller.CheckIsFullService;
 import com.fleurey.android.ledcontroller.preferencescontroller.PreferenceKeys;
 
 public class UpdateNotificationReceiver extends BroadcastReceiver {
+	
+	public static final String ACTION_ASK_FOR_UPDATE = UpdateNotificationReceiver.class.getName() + ".ACTION_ASK_FOR_UPDATE";
 	
 	private static final String TAG = UpdateNotificationReceiver.class.getSimpleName();
 	
@@ -24,8 +25,8 @@ public class UpdateNotificationReceiver extends BroadcastReceiver {
     	if (Intent.ACTION_SCREEN_OFF.equals(intent.getAction())) {
     		Log.d(TAG, "__SCREEN_OFF__");
     		updateNotification(context);
-    	} else if (BackgroundService.ACTION_STARTED.equals(intent.getAction())) {
-    		Log.d(TAG, "__ACTION_STARTED__");
+    	} else if (ACTION_ASK_FOR_UPDATE.equals(intent.getAction())) {
+    		Log.d(TAG, "__ACTION_ASK_FOR_UPDATE__");
     		updateNotification(context);
     	} else if (CheckIsFullService.ACTION_IS_FULL.equals(intent.getAction())) {
     		Log.d(TAG, "__ACTION_IS_FULL__");

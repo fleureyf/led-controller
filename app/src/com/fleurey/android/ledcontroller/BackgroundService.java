@@ -19,7 +19,7 @@ public class BackgroundService extends Service {
 	@Override
 	public int onStartCommand(Intent intent, int flags, int startId) {
 		Log.d(TAG, "__ON_START__");
-		registerReceiver(receiver, new IntentFilter(ACTION_STARTED));
+		sendBroadcast(new Intent(ACTION_STARTED));
 		registerReceiver(receiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
 		return START_STICKY;
 	}
